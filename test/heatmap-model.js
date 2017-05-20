@@ -8,13 +8,15 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: {lat: 37.775, lng: -122.434},
-        mapTypeId: 'satellite'
+        mapTypeId: 'roadmap',
     });
 
     heatmap = new google.maps.visualization.HeatmapLayer({
         data: getPoints(),
-        map: map
+        map: map,
     });
+    heatmap.set('radius', 500);
+
 }
 
 function toggleHeatmap() {

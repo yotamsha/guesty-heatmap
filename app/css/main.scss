@@ -1,6 +1,6 @@
 @import "responsive";
 .header {
-  height: 300px;
+  height: 150px;
   width: 100%;
   background-color: #FF8F00;
   .city-selection-form {
@@ -27,7 +27,11 @@
   }
 }
 
-.list-container {
+#map {
+  height: 600px;
+}
+
+/*.list-container {
   width: 1000px;
   @include media($layout-breakpoint-xs,$layout-breakpoint-md) {
     width: 500px;
@@ -66,7 +70,7 @@
       }
     }
   }
-}
+}*/
 @include media-max($layout-breakpoint-xs) {
   .header {
     padding-top:50px;
