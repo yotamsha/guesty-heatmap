@@ -7,6 +7,13 @@ angular.module('myApp.services')
         var CONFIG = {
             RATING_FACTOR : 0.2
         };
+
+        /**
+         * Calculate the demand for each listing using its review_count and star_rating.
+         * @param listing
+         * @returns {number}
+         * @private
+         */
         function _calcWeight(listing) {
             var reviews_count = listing.reviews_count ? listing.reviews_count : 0;
             var star_rating = listing.star_rating ? listing.star_rating : 1;
@@ -14,9 +21,12 @@ angular.module('myApp.services')
             return score;
         }
 
-
         var Service = {
-            
+            /**
+             * Init the heatmap UI component using the Google Maps JS API.
+             * refer to: https://developers.google.com/maps/documentation/javascript/heatmaplayer
+             * @param data the weighted geolocation datapoints for the heatmap visualization calculation.
+             */
             initMap: function (data) {
                 _map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 12,
@@ -30,7 +40,12 @@ angular.module('myApp.services')
                     radius: 50
                 });
             },
-
+            /**
+             * Convert listings data to WeightedLocation points used by Google Maps API.
+             * refer to: https://developers.google.com/maps/documentation/javascript/reference#WeightedLocation
+             * @param listings
+             * @returns {*}
+             */
             getMapDataForListings: function (listings) {
                 return listings.map(function (obj) {
                     var weight = _calcWeight(obj.listing);
