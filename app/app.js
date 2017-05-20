@@ -4,7 +4,7 @@
 angular.module('myApp', [
     'ngRoute',
     'ngMaterial',
-    'myApp.properties-search',
+    'myApp.listings-demand-map',
     'myApp.services'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');

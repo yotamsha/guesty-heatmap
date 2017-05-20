@@ -1,6 +1,10 @@
 /* app css stylesheet */
+html {
+  background-color: #e7e7e7; }
+
 body {
-  background-color: #ffffff;
+  height: 100%;
+  background-color: #e7e7e7;
   font-family: 'Roboto', sans-serif, "Helvetica Neue", Helvetica, Arial;
   font-size: 16px; }
   body h1, body h2, body h3, body h4, body h5, body h6 {
@@ -42,28 +46,28 @@ $layout-breakpoint-xs: 600px !default;
 !* Large devices (large desktops, 1200px and up) *!
 @media (min-width: @screen-lg-min) { ... }*/
 .header {
-  height: 150px;
+  height: 100px;
   width: 100%;
   background-color: #FF8F00; }
-  .header .city-selection-form {
-    padding: 50px;
-    color: #ffffff;
-    font-size: 24px; }
-    .header .city-selection-form .select-box {
-      width: 500px;
-      background-color: #ffffff;
-      color: #cccccc;
-      padding: 20px;
-      margin: 40px auto;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
-    .header .city-selection-form .secondary-title {
-      font-size: 16px;
-      width: 450px;
-      margin: auto;
-      text-align: center; }
+  .header h2 {
+    margin: 0;
+    padding: 30px;
+    color: #ffffff; }
 
 #map {
   height: 600px; }
+
+.loader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 200px auto;
+  width: 150px;
+  /*
+  margin: 200px auto;
+  */ }
+  .loader img {
+    width: 100%; }
 
 /*.list-container {
   width: 1000px;
