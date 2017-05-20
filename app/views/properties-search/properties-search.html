@@ -1,0 +1,24 @@
+
+<header class="header">
+    <form class="city-selection-form">
+        <md-select id="city-select" placeholder="Explore a City" ng-change="ctrl.locationChanged()"
+                   class="select-box" ng-model="ctrl.selectedLocation">
+            <md-option ng-value="city" ng-repeat="city in ctrl.cities">{{ city }}</md-option>
+
+        </md-select>
+        <h4 class="secondary-title">
+            Discover apartments in the world's most beautiful cities.
+        </h4>
+    </form>
+</header>
+
+<ul class="list-container" layout="row" layout-wrap layout-margin>
+    <li ng-click="ctrl.openModal(propertyItem)" class="list-item"
+        flex-xs="100" flex-gt-xs="100" flex-gt-sm="45" flex-gt-md="30" ng-repeat="propertyItem in ctrl.listings">
+        <img class="property-img" ng-src="{{propertyItem.listing.picture_url}}" >
+        <div class="property-text">
+            <div class="prop-title">{{propertyItem.listing.name}}</div>
+            <div class="prop-address">{{propertyItem.listing.public_address}}</div>
+        </div>
+    </li>
+</ul>

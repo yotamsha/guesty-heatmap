@@ -1,0 +1,25 @@
+<md-dialog class="dialog-container property-item" aria-label="List dialog">
+    <md-dialog-content>
+        <div class="item-header" layout="row">
+            <div class="property-details" flex="70">
+                <h2>{{ ctrl.propertyData.name }}</h2>
+                <h5 class="prop-address">{{ ctrl.propertyData.public_address }}</h5>
+            </div>
+            <div flex="30">
+                <img class="property-img" ng-src="{{ctrl.propertyData.picture_url}}" >
+            </div>
+        </div>
+
+        <md-list class="reviews-list">
+            <div class="loader">
+                <img ng-hide="ctrl.dataLoaded" src="/assets/images/reviews-loader.gif">
+            </div>
+            <md-list-item class="review-item" ng-repeat="review in ctrl.reviews">
+                <div class="review-content">
+                    {{review.comments}}
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-dialog-content>
+
+</md-dialog>
